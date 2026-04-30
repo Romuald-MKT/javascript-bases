@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.surligne {
+  background-color: yellow;
+  font-weight: bold;
+  padding: 4px;
+}
