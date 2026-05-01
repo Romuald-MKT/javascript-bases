@@ -1,0 +1,54 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#formulaire {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 16px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+li span {
+  flex: 9;
+}
+
+.terminee {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.btn-supprimer {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
