@@ -1,3 +1,23 @@
+// Différence fondamentale entre : getElementById et querySelector
+
+// getElementById — uniquement par ID, sans le #
+const t1 = document.getElementById("titre");
+
+// querySelector — syntaxe CSS, retourne le PREMIER élément trouvé
+const t2 = document.querySelector("#titre");       // par ID
+const classeCSS = document.querySelector(".btn-supprimer"); // par classe
+const h1 = document.querySelector("h1");           // par balise
+const combinaison = document.querySelector("li span");      // par combinaison
+console.log(t1)
+console.log(t2)
+console.log(classeCSS)
+console.log(h1)
+console.log(combinaison)
+
+
+
+// Début du code de la ToDo List !
+
 const champTexte = document.getElementById("inputTache");
 const btnAjouter = document.getElementById("btnAjouter");
 const listeTaches = document.getElementById("listeTaches");
@@ -72,6 +92,7 @@ function afficherTache(tache){
         tache.terminee = checkboxVar.checked;
         spanVar.classList.toggle("terminee");
         sauvegarder();
+        afficherCompteur();
     });
 
     // Supprimer
@@ -82,10 +103,28 @@ function afficherTache(tache){
         sauvegarder();
         liVar.remove();
     });
+
+    afficherCompteur();
 }
 
 // Sauvegarder le tableau dans le localStorage
 function sauvegarder() {
     localStorage.setItem("taches", JSON.stringify(taches));
+}
+
+// Compte les éléments visuels dans le DOM — pas les données dans le localStorage.
+//Affiche le nombre de tache terminée
+/*function afficherCompteur() {
+    const tachesTerminees = document.querySelectorAll(".terminee");
+    console.log(`Tu as ${tachesTerminees.length} tâche(s) terminée(s)`);
+}*/
+
+// Compte les éléments terminés depuis le tableau présent dans le localStorage
+function afficherCompteur() {
+    const nombreTerminees = taches.filter(function(tache) {
+        return tache.terminee === true;
+    }).length;
+
+    console.log(`Tu as ${nombreTerminees} tâche(s) terminée(s)`);
 }
 
