@@ -491,3 +491,53 @@
   }
   
 }
+
+/** Concept 5 — Module (import / export) **/ 
+// Jusqu'ici tout ton code est dans un seul fichier script.js. 
+// Les modules permettent de découper ton code en plusieurs fichiers et de les faire communiquer entre eux. 
+// C'est la base de l'architecture Vue.js — chaque composant est un module.
+
+// Deux lignes — fonctionne mais redondant
+/*
+import { additionner } from "./maths.js";
+import { multiplier } from "./maths.js";
+*/
+
+// Une seule ligne — plus propre
+import { additionner, multiplier } from "./maths.js"; 
+
+// importer un export default
+import mesProduits from "./produits.js"
+{
+  /*Setup — une petite modification dans le HTML
+    Les modules nécessitent type="module" dans la balise script : 
+    <!-- index.html -->
+    <script type="module" src="script.js"></script>
+  */
+
+  // export — exposer du code
+  /*
+    // Export nommé — avec {}  à l'import
+    export const additionner = (a, b) => a + b;
+    import { additionner } from "./utils.js";
+  */
+
+  // export default — export principal d'un fichier
+  /**
+    // Export default — sans {} à l'import, nom libre
+    export default profil;
+    import monProfil from "./profil.js"; // on peut l'appeler comme on veut
+  */
+
+  // import — importer du code
+
+  
+
+  // Affiche le résultat de additionner(10, 5) et multiplier(3, 4)
+  console.log(additionner(10,5));
+  console.log(multiplier(3,4));
+  // Affiche les noms des produits disponibles avec filter + map
+
+  const produitsDisponibles = mesProduits.filter(produit => produit.disponible).map(({nom}) => nom);
+  console.log(produitsDisponibles);
+}
