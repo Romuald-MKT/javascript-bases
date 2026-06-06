@@ -96,12 +96,18 @@ function afficherTache(tache){
     });
 
     // Supprimer
-    btnSupprimer.addEventListener("click", function() {
-        taches = taches.filter(function(t) {
+    /*
+    Clic sur Supprimer
+        → 1. Supprimer du tableau (données)
+        → 2. Sauvegarder le nouveau tableau (localStorage)
+        → 3. Supprimer du DOM (visuel)
+    */
+    btnSupprimer.addEventListener("click", function() {  // On dit au navigateur : "écoute les clics sur ce bouton Supprimer, et quand ça arrive, exécute cette fonction"
+        taches = taches.filter(function(t) { // taches.filter() parcourt chaque élément du tableau
         return t !== tache;
-        });
-        sauvegarder();
-        liVar.remove();
+        }); // On reconstruit le tableau taches en gardant uniquement les tâches qui ne sont pas celle qu'on veut supprimer.
+        sauvegarder(); // On écrit le nouveau tableau taches (sans la tâche supprimée) dans le localStorage.
+        liVar.remove(); // On supprime visuellement le li de la page.
     });
 
     afficherCompteur();
