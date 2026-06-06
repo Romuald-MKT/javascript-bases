@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz JS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Écran de démarrage -->
+    <div id="ecranDepart">
+      <h1>Quiz JavaScript</h1>
+      <p>5 questions pour tester tes connaissances</p>
+      <button id="btnCommencer">Commencer</button>
+    </div>
+
+    <!-- Écran de question -->
+    <div id="ecranQuestion" class="cache">
+      <div id="entete">
+        <span id="numeroQuestion">Question 1/5</span>
+        <span id="timer">⏱ 15s</span>
+        <span id="scoreEnCours">Score : 0</span>
+      </div>
+      <h2 id="texteQuestion"></h2>
+      <div id="listeChoix"></div>
+    </div>
+
+    <!-- Écran de résultats -->
+    <div id="ecranResultat" class="cache">
+      <h1>Résultats</h1>
+      <p id="scoreFinal"></p>
+      <p id="appreciation"></p>
+      <button id="btnRejouer">Rejouer</button>
+    </div>
+
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
